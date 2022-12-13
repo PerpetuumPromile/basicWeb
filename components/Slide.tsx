@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { lazy, useState } from 'react'
 import { SliderData } from '../components/SliderData'
 import Image from 'next/image'
 import {FaArrowCircleLeft, FaArrowCircleRight} from 'react-icons/fa'
@@ -17,13 +17,13 @@ const Slide = ({slides}:{slides:any}) => {
     };
     
 
-    if(!Array.isArray(slides) || slides.length <= 0){
+    /*if(!Array.isArray(slides) || slides.length <= 0){
         return null;
-    }
+    }*/
     
     return (
         <div id='gallery' className='max-w-[1240px] mx-auto '>
-            <h1 className='text-2xl font-bold text-center p-4'>Gallery</h1>
+            <h1 className='text-2xl font-bold text-center p-4 mb-[50px]'>Gallery</h1>
             <div className='relative flex justify-center p-4'>
             {SliderData.map((slide,index) => {
                 return( 
@@ -45,7 +45,7 @@ const Slide = ({slides}:{slides:any}) => {
                             key={index} 
                             alt='/' 
                             width='1440' 
-                            height='600'/>    
+                            height='900'/>    
                         )}
 
                         <FaArrowCircleRight

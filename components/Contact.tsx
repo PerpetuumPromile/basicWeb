@@ -33,38 +33,16 @@ const Contact = () => {
       }
     };
   
-  
-  
-  
-  
-    /*const submitContact = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const name = (event.target as HTMLInputElement).name.valueOf;
-    const res = await fetch('/api/contact', {
-      body: JSON.stringify({
-        name: name,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      method: 'POST',
-    });
-    const result = await res.json();
-    alert(`Is this your full name: ${result.name}`);
-  };*/
-  
-  
-  
   return (
-    <div className='max-w-[1240px] m-auto p-4 h-screen'>
+    <div className='max-w-[1240px] max-h-[500px] m-auto p-4 h-screen'>
       <h1 className='text-2xl font-bold text-center p-4'>Contact me</h1>
       <form className='max-w-[600px] m-auto' onSubmit={handleSubmit}>
           <div className='grid grid-cols-2 gap-2'>
             <input className='border shadow-lg p-3' type="text" placeholder='Name' id='name' name='name' value={name} required onChange={event => setName(event.target.value)}/>
-            <input className='border shadow-lg p-3' type="email" placeholder='Email'/>
+            <input className='border shadow-lg p-3' type="email" placeholder='Email' required/>
           </div>
           <input className='border shadow-lg p-3 w-full my-2' type="text" placeholder='Subject' />
-          <button type='submit' className='border shadow-lg p-3 w-full'>Submit</button>
+          <button type='submit' className='border shadow-lg p-3 w-full bg-green-500 text-white'>Submit</button>
       </form>
 
     </div>
